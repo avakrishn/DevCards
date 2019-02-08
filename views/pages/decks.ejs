@@ -1,67 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <% include ../partials/head %>
 </head>
+
 <body class="container-fluid">
 
-	<header>
-		<% include ../partials/headerLoggedIn %>    
-	</header>
-  
+    <header>
+        <% include ../partials/headerLoggedIn %>
+    </header>
+
     <!--This is where the bubble animation is housed-->
-    <ul class= "bubble">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+    <ul class="bubble">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
     </ul>
 
-		<% include ../partials/navbar_sidebar%>
+    <% include ../partials/navbar_sidebar%>
 
 
-	<main>
+    <main>
 
-		<div class="row">
+        <div class="row">
 
-            <div class="col-md-6 cards">
-            <div class="decks"> 
-            </div>
-            <div class="card">
-                <h3>List of Decks</h3>
-                <div class="deckHolder">
-                <!-- this is where deck are placed -->
-                </div>
-            </div>
-            </div>
+            
             <div class="col-md-4">
                 <div class="card text-center">
                     <h3>Create a New Deck!</h3>
-                    <form method = "POST" action="/decks/create">
+                    <form method="POST" action="/decks/create">
                         <input type="text" name="name" placeholder="Enter Name of Deck">
                         <input class="check" type="submit" value="submit">
                     </form>
-                    <h3>View Your Deck Details</h3>
-                    <div class="viewer">
+                    <!-- <h3>View Your Deck Details</h3> -->
+                    <!-- <div class="viewer">
                         <form method = "GET" action="/decks/viewer">
                         <button class="hover" type="submit" value="submit">View</button></form>
-                    </div>
+                    </div> -->
                 </div>
                 <div>
                     <!-- <div class="speech-bubble" id="locater-sb1">I'm a bubble</div>
@@ -70,12 +63,24 @@
                     <button class="hover" id="toggle">Help!!!</button> -->
                 </div>
             </div>
-        </div>  
-    </div>
-</main>
-<!-- <footer>
+            
+            <div class="col-md-6 cards">
+                    <div class="decks">
+                    </div>
+                    <div class="card">
+                        <h3>List of Decks</h3>
+                        <div class="deckHolder">
+                            <!-- this is where deck are placed -->
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </main>
+    <!-- <footer>
 <% include ../partials/footer %>
 </footer> -->
-<% include ../partials/script %>
+    <% include ../partials/script %>
 </body>
+
 </html>
