@@ -73,7 +73,7 @@
     input[type="email"],
     input[type="password"] {
         border: none;
-        border-bottom: 2px solid navy;
+        border-bottom: 2px solid rgb(80, 39, 87);
         background-color: transparent;
         width: 80%;
     }
@@ -87,7 +87,7 @@
     .label-text {
         /* color: rgb(0, 109, 128); */
         /* color: rgb(143, 83, 192); */
-        color: navy;
+        color: rgb(80, 39, 87);
     }   
 
     ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
