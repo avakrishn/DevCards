@@ -1,47 +1,47 @@
-
 <input type="checkbox" id="sidebartoggler">
 
 <div class="page-wrap">
 
-  <label for="sidebartoggler" id= "tab" class="toggle"><div id="plus">+</div><p id="menuLabel">MENU</p></label>
+    <label for="sidebartoggler" id="tab" class="toggle">
+        <div id="plus">+</div>
+        <p id="menuLabel">MENU</p>
+    </label>
 
- 
-  <div class="sidebar">
-    <ul>
-        <li class="navbar-side-item">
-            <h3 id="welcome">Welcome <%= data[0].username %> </h3>
-        </li>
 
-        <li class="navbar-side-item">
-            <a class="nav-item nav-link"  href="/flashcards/new_card">Create New Cards</a>
-        </li>
+    <div class="sidebar">
+        <ul>
+            <li class="navbar-side-item">
+                <h3 id="welcome">Welcome <%= data[0].username %> </h3>
+            </li>
 
-        <li class="navbar-side-item">
-            <a class="nav-item nav-link"  href="/flashcards/">My Cards</a>
-        </li>
+            <li class="navbar-side-item">
+                <a class="nav-item nav-link" href="/flashcards/all_cards">Community Deck</a>
+            </li>
 
-        <li class="navbar-side-item">
-            <a class="nav-item nav-link"  href="/decks">My Decks</a>
-        </li>
+            <li class="navbar-side-item">
+                <a class="nav-item nav-link" href="/flashcards/new_card">Create New Cards</a>
+            </li>
 
-        <li class="navbar-side-item">
-            <a class="nav-item nav-link"  href="/flashcards/all_cards">Community Deck</a>
-        </li>
+            <li class="navbar-side-item">
+                <a class="nav-item nav-link" href="/flashcards/">My Cards</a>
+            </li>
 
-        <li class="navbar-side-item">
-            <a class="nav-item nav-link"  href="/profile">My Profile<span class="sr-only">(current)</span></a>
-        </li>
+            <li class="navbar-side-item">
+                <a class="nav-item nav-link" href="/decks">My Decks</a>
+            </li>
 
-        <li class="navbar-side-item">
+            <li class="navbar-side-item">
+                <a class="nav-item nav-link" href="/profile">My Profile<span class="sr-only">(current)</span></a>
+            </li>
+
+            <!-- <li class="navbar-side-item">
             <a class="nav-item nav-link"  href="/construction">Connect With Other Users</a>
-        </li>
+        </li> -->
 
-        <li class="navbar-side-item">
-            <a class="nav-item nav-link"  href="/FAQ">FAQs</a>
-        </li>
-    </ul>
-  </div>
+            <li class="navbar-side-item">
+                <a class="nav-item nav-link" href="/FAQ">FAQs</a>
+            </li>
+        </ul>
+    </div>
 
 </div>
-
-
