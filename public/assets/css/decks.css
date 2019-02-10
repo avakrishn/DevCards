@@ -3,7 +3,15 @@
 }
 
 .deckHolder{
-    margin: auto;
+    margin: 0;
+    /* max-height: 500px; */
+    /* overflow: hidden; */
+    /* overflow-y: scroll; */
+    margin-bottom: 20px;
+}
+
+.deck-contain{
+    margin: 0 auto;
 }
 
 /* input{
@@ -39,31 +47,60 @@ nav{
 }
 
 .box{
-    width: 200px;
-    height: 200px;
+    /* width: 200px; */
+    width: 97%;
+    height: 100px;
+
     background-color: whitesmoke;
-    display: block;
-    float: left;
-    margin: 6.5px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    margin: 15px;
+    border-radius: 10px;
+    /* float: left; */
+    /* margin: 6.5px; */
 }
 
 .box ul{
+
     margin: 0;
     padding: 0;
     text-align: center;
-    position: relative;
-    top: 40%;
-    transform: translateY(-40%);
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    align-items: center;
+    width: 100%;
+    /* position: absolute; */
+    /* position: relative; */
+    /* top: 40%; */
+    /* transform: translateY(-40%); */
  } 
 
 .nametag{
-    margin:  auto;
-    width: 150px;
-    position: relative;
-    text-align: center;
-    display: block;
-    top: 25%;
-    transform: translateY(-25%);
+    /* position: absolute;
+    left: 8%; */
+    /* padding-left: 50px; */
+    /* margin:  auto; */
+    /* width: 150px; */
+    /* position: relative; */
+    /* text-align: center; */
+    /* display: block; */
+    /* top: 25%; */
+    /* transform: translateY(-25%); */
+    width: 30%;
+    text-align: left;
+    padding-left: 40px;
+    word-wrap: normal;
+}
+
+.cardCounttag{
+    /* position: absolute;
+    left: 38%; */
+    width: 30%;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .spin{ 
@@ -73,13 +110,28 @@ nav{
     background: #eee;
     display: inline-block;
     margin: 10px;
+    position: relative;
 }
 
-.spin a{
-    text-align: center;
+.spinnerDiv{
     position: relative;
-    top: 25%;
-    transform: translateY(-25%); 
+    /* right: 5%;  */
+    width: 40%;
+    margin-right: 20px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.spin a, .spin p{
+    text-align: center;
+    /* height: 50px; */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%); 
 
 } 
 
@@ -87,14 +139,32 @@ nav{
     content: '';
     display: block;
     border-radius: 50%;
-    position: absolute;
+    position: relative;
     height: 50px;
     width: 50px;
     border:2px solid transparent;
-    border-top-color: blue;
-    border-bottom-color: blue;
     animation: spinner 4s linear infinite;
     animation-play-state: running;
+    cursor: pointer;
+}
+
+.spin p:hover{
+    cursor: pointer;
+}
+
+.study-spin::before{
+    border-top-color: green;
+    border-bottom-color: green;
+}
+
+.edit-spin::before{
+    border-top-color: blue;
+    border-bottom-color: blue;
+}
+
+.delete-spin::before{
+    border-top-color: red;
+    border-bottom-color: red;
 }
 
 /* .running{
@@ -169,9 +239,34 @@ nav{
 #locater-sb1 { position: absolute; visibility: visible; left: -150px; top: 50px; height: 100px; width: 150px; z-index: 200; }
 #locater-sb2 { position: absolute; visibility: visible; left: -650px; top: 425px; height: 100px; width: 150px; z-index: 200; }
 #locater-sb3 { position: absolute; visibility: visible; left: -150px; top: 50px; height: 100px; width: 150px; z-index: 200; } */
+.study-spin a{
+    color: green;
+}
 
-.spin:hover {
+.delete-spin p{
+    color: red;
+}
+
+.edit-spin:hover, .edit-spin:hover a, .delete-spin:hover, .delete-spin:hover p,.study-spin:hover, .study-spin:hover a {
+    text-decoration: none;
+    color: white;
+}
+
+.edit-spin:hover{
+    background-color: blue;
+}
+
+
+.delete-spin:hover{
     background-color: red;
+}
+
+
+.study-spin:hover{
+    background-color: green;
+}
+.spin-text{
+    text-decoration: none;
 }
 
 .bubble{

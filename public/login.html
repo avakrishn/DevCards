@@ -4,33 +4,53 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Portal Login</title>
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+        integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         body {
             background-image: url("/assets/images/qbkls/qbkls/qbkls.png");
             background-color: #cccccc;
-}
-        .container{
+        }
+
+        .container {
             margin: auto;
             margin-top: 200px;
             width: 300px;
         }
-        form{
+
+        form {
             border: 2px solid gray;
             text-align: center;
             padding: 10px;
         }
-        button{
+
+        button {
             margin-top: 10px;
         }
     </style>
 </head>
+
 <body>
-    <div class = "container">
-        <form method="POST" action ="/login">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Web Dev Cards</a>
+        <button class="navbar-toggler mr-5" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link home" href="/home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link register" href="/signup">Register</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <form method="POST" action="/login">
             <label for="username"><b>Username</b></label>
             <input type="text" placeholder="" name="username" required>
             <br>
@@ -45,7 +65,8 @@
 
         </form>
     </div>
-    
+
 
 </body>
+
 </html>

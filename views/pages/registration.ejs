@@ -1,243 +1,249 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Registration Form</title>
     <% include ../partials/head %>
-    <style>
-         body {
-            background-image: url("/assets/images/qbkls/qbkls/qbkls.png");
-            background-color: #cccccc;
-         }
-        form{
-            border: 1px gray;
-            border-style:ridge;
-            padding: 5px 10px 5px 15px;
-        }
-        img{
-            width: 125px;
-            height: 150px;
-        }
-        .form-group{
-            margin-top: 1rem;
-        }
-        .card {
-            position: relative;
-            width: 50%;
-        }
-        .card-img-top {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-            transition: .5s ease;
-            background-color: #008CBA;
-        }
-        .card:hover .overlay {
-            opacity: 1;
-        }
-        .text {
-            color: white;
-            font-size: 20px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-        .alert{
-            text-align: center;
-        }
-    </style>
+    <link rel ="stylesheet" href="/assets/css/registration.css"/>
 </head>
+
 <body>
-    
-    <div class = "container align-items-center">
+
+    <header>
+        <% include ../partials/header_register %>
+    </header>
+
+    <div class="container align-items-center">
         <!-- errors go here -->
         <% if (data == true){ %>
-            <p class="alert d-none">The username is taken</p>
+        <p class="alert d-none">The username is taken</p>
         <% } %>
-        <h1>Register for a Web Development Flashcard Studies Account!</h1>
+        <h1 class="pt-5 text-center">Register for a Web Dev Cards Account!</h1>
         <br>
         <br>
-        
-            
-        <form>
+
+
+        <form class="mx-auto">
             <div class="form-group row">
-                <div class="col-7">
-                    <label for="username"><b>Username</b></label>
-                    <input id="username" type="text" placeholder="Enter Username" name="username" required>
-                    <br>
-                    <label for="first_name"><b>First Name</b></label>
-                    <input id="firstName" type="text" placeholder="Enter your first name" name="first_name" required>
-                    <br>
-                    <label for="last_name"><b>Last Name</b></label>
-                    <input id="lastName" type="text" placeholder="Enter your last name" name="last_name" required>
-                    <br>
-                    <label for="email"><b>Email</b></label>
-                    <input id="email" type="email" placeholder="Enter Email" name="email" required>
-                    <br>
-                    <label for="password"><b>Password</b></label>
-                    <input id="pw" class="pw" type="password" placeholder="Enter Password" name="password" required>
-                    <br>
-                    <label for="password_reenter"><b>Re-Enter Password</b></label>
-                    <input id="repw"  class="repw" type="password" placeholder="Enter Password" name="password_reenter"         required>
+                <div class="col-8 pl-5">
+                    <div class="d-flex flex-row flex-wrap">
+
+                        <div class="mb-4 w-50">
+                            <label class="label-text" for="first_name" class="pr-2"><b>FIRST NAME: </b></label>
+                            <input class="d-block" id="firstName" type="text" placeholder="Enter First Name"
+                                name="first_name" required>
+                        </div>
+
+                        <div class="mb-4 w-50">
+                            <label class="label-text" for="last_name" class="pr-2"><b>LAST NAME: </b></label>
+                            <input class="d-block" id="lastName" type="text" placeholder="Enter Last Name"
+                                name="last_name" required>
+                        </div>
+
+                        <div class="mb-4 w-50">
+                                <label class="label-text" for="username" class="pr-2"><b>USERNAME: </b></label>
+                                <input class="d-block" id="username" type="text" placeholder="Enter Username"
+                                    name="username" required>
+                            </div>
+
+                        <div class="mb-4 w-50">
+                            <label class="label-text" for="email" class="pr-2"><b>EMAIL: </b></label>
+                            <input class="d-block" id="email" type="email" placeholder="Enter Email" name="email"
+                                required>
+                        </div>
+
+                        <div class="mb-4 w-50">
+                            <label class="label-text" for="password" class="pr-2"><b>PASSWORD: </b></label>
+                            <input class="d-block pw" id="pw" type="password" placeholder="Enter Password"
+                                name="password" required>
+                            <small class="font-weight-light label-text"> 8 - 16 characters in length</small>
+                        </div>
+
+                        <div class="mb-4 w-50">
+                            <label class="label-text" for="password_reenter" class="pr-2"><b>RE-ENTER PASSWORD:
+                                </b></label>
+                            <input class="d-block repw" id="repw" type="password"
+                                placeholder="Enter Password" name="password_reenter" required>
+                        </div>
+                    </div>
+
                     <label class="d-none" for="profileAvatar"><b>profileAvatar</b></label>
-                    <input id="av" class="av d-none" type="text" placeholder="profileAvatarPath" name="profileAvatar"       style="width: 250px;"></span> 
-                    <hr>
-                    <span class="font-weight-light">Password must be between 8 - 16 characters in length</span>
-                    <br><br>
-                    <button id="createAccount" type="submit" class="btn btn-primary">Create Account!</button>
+                    <input id="av" class="av d-none" type="text" placeholder="profileAvatarPath" name="profileAvatar"
+                        style="width: 250px;"></span>
+ 
+                    
                 </div>
-                <div class="col-5 my-auto">
+                <div class="col-4">
                     <div class="card mx-auto" style="width: 15rem;">
                         <div class="card-body mx-auto">
-                            <img class="card-img-top" src="https://via.placeholder.com/130x150" alt="Card image cap"    style="width:130px;height:150px;">
-                        <div class="overlay">
-                                <div class="text"><button class = "overlay-btn btn btn-primary" type="button"   data-toggle="modal" data-target="#avatar">Choose Avatar</button></div>
-                        </div>
-                        <h5 class="card-title">Profile Avatar</h5>
-                        <span class="card-text">
-                           <!-- <label for="profileAvatar"><b>profileAvatar</b></label>
+                            <img class="card-img-top" src="/assets/images/avatars/man.png" alt="Card image cap"
+                                style="width:130px;height:150px;">
+                            <div class="overlay">
+                                <div class="text"><button class="overlay-btn btn btn-primary" type="button"
+                                        data-toggle="modal" data-target="#avatar">Choose Avatar</button></div>
+                            </div>
+                            <h5 class="card-title">Profile Avatar</h5>
+                            <span class="card-text">
+                                <!-- <label for="profileAvatar"><b>profileAvatar</b></label>
                             <input id="profileAvatar" class="profileAvatar" type="text" placeholder="profileAvatarPath" name="profileAvatar" disabled style="width: 250px;"></span>  -->
-                      <!-- <button class = "btn btn-primary" type="button" data-toggle="modal" data-target="#avatar">Choose Avatar</button> -->
-                      <!-- Modal -->
-                        <div id="avatar" class="modal fade" role="dialog">
-                            <div class="modal-dialog modal-lg">
-                              
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                      <h1>Pick an Avatar!</h1>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    
-                                  </div>
-                                  <div class="modal-body">
-                                      <div class = "row">
-                                        <div class = "col-3">
-                                            <img type="image" class="avatarSubmit" alt="Login" data-dismiss="modal" src="/assets/images/avatars/boy-1.png" style="width:125px;height:150px;">
-                                        </div>
-                                        <div class = "col-3">
-                                            <img type="image" class="avatarSubmit" alt="Login" data-dismiss="modal" src="/assets/images/avatars/boy.png" style="width:125px;height:150px;">
-                                        </div>
-                                        <div class = "col-3">
-                                            <img type="image" class="avatarSubmit" alt="Login" data-dismiss="modal" src="/assets/images/avatars/girl-1.png" style="width:125px;height:150px;">  
-                                        </div>
-                                        <div class = "col-3">
-                                            <img type="image" class="avatarSubmit" alt="Login" data-dismiss="modal" src="/assets/images/avatars/girl.png" style="width:125px;height:150px;"> 
-                                        </div>
-                                        <!-- <div class = "col-3">
+                                <!-- <button class = "btn btn-primary" type="button" data-toggle="modal" data-target="#avatar">Choose Avatar</button> -->
+                                <!-- Modal -->
+                                <div id="avatar" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1>Choose an Avatar!</h1>
+                                                <button type="button" class="close"
+                                                    data-dismiss="modal">&times;</button>
+
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-3 my-4">
+                                                        <img type="image" class="avatarSubmit" alt="Login"
+                                                            data-dismiss="modal" src="/assets/images/avatars/boy-1.png"
+                                                            style="width:125px;height:150px;">
+                                                    </div>
+                                                    <div class="col-3 my-4">
+                                                        <img type="image" class="avatarSubmit" alt="Login"
+                                                            data-dismiss="modal" src="/assets/images/avatars/boy.png"
+                                                            style="width:125px;height:150px;">
+                                                    </div>
+                                                    <div class="col-3 my-4">
+                                                        <img type="image" class="avatarSubmit" alt="Login"
+                                                            data-dismiss="modal" src="/assets/images/avatars/girl-1.png"
+                                                            style="width:125px;height:150px;">
+                                                    </div>
+                                                    <div class="col-3 my-4">
+                                                        <img type="image" class="avatarSubmit" alt="Login"
+                                                            data-dismiss="modal" src="/assets/images/avatars/girl.png"
+                                                            style="width:125px;height:150px;">
+                                                    </div>
+                                                    <!-- <div class = "col-3">
                                                 <img type="image" class="avatarSubmit" alt="Login" data-dismiss="modal" src="/assets/images/avatars/man-1.png" style="width:125px;height:150px;">
                                             
                                         </div> -->
-                                      </div>
-                                      <div class = "row">
-                                        <div class = "col-3">
-                                            <img type="image" class="avatarSubmit" alt="Login" data-dismiss="modal" src="/assets/images/avatars/man-2.png"style="width:125px;height:150px;" >
-                                        </div>
-                                        <div class = "col-3">
-                                            <img type="image" class="avatarSubmit" alt="Login" data-dismiss="modal" src="/assets/images/avatars/man-3.png" style="width:125px;height:150px;">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <img type="image" class="avatarSubmit" alt="Login"
+                                                            data-dismiss="modal" src="/assets/images/avatars/man-2.png"
+                                                            style="width:125px;height:150px;">
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <img type="image" class="avatarSubmit" alt="Login"
+                                                            data-dismiss="modal" src="/assets/images/avatars/man-3.png"
+                                                            style="width:125px;height:150px;">
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <img type="image" class="avatarSubmit" alt="Login"
+                                                            data-dismiss="modal" src="/assets/images/avatars/man-4.png"
+                                                            style="width:125px;height:150px;">
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <img type="image" class="avatarSubmit" alt="Login"
+                                                            data-dismiss="modal" src="/assets/images/avatars/man.png"
+                                                            style="width:125px;height:150px;">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        <div class = "col-3">
-                                            <img type="image" class="avatarSubmit" alt="Login" data-dismiss="modal" src="/assets/images/avatars/man-4.png"style="width:125px;height:150px;">
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
                                         </div>
-                                        <div class = "col-3">
-                                            <img type="image" class="avatarSubmit" alt="Login" data-dismiss="modal" src="/assets/images/avatars/man.png" style="width:125px;height:150px;">   
-                                        </div>
-                                      </div>                                 
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
+                
                 </div>
-            </div>
-        </div>
-    </form>
+                <div class="d-block mx-auto text-center">
+                    <button id="createAccount" type="submit" class="btn btn-info mt-3 mb-2">Create An Account!</button>
+                    <div class="label-text d-block" id="error-statement"></div>
+                </div>
+                
 
-        
-    <!-- </div> -->
-   
-</div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"     crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+            </div>
+        </form>
+
+
+        <!-- </div> -->
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+        integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
     <% include ../partials/script %>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <script type="text/javascript">
-      //on click of submit button, javascript checks whether password is between 8 - 16 characters long
-      var path;
-      console.log($(".alert").length);
-        $("#createAccount").on("click",function(event){
+        //on click of submit button, javascript checks whether password is between 8 - 16 characters long
+        var path;
+        console.log($(".alert").length);
+        $("#createAccount").on("click", function (event) {
             event.preventDefault();
-            if($("#username").val() == "" || $("#firstName").val() == "" || $("#lastName").val() == "" || $("#email").val() == "" || $("#pw").val() == "" || $("#repq").val() == "")
-            {
-                alert("must fill out all fields");
+            if ($("#username").val() == "" || $("#firstName").val() == "" || $("#lastName").val() == "" || $("#email").val() == "" || $("#pw").val() == "" || $("#repq").val() == "") {
+                // alert("must fill out all fields");
+                $('#error-statement').text('Please fill out all fields');
             }
-            else{
-            //get path and post it along with other form info and upload path to userProfile table
-            
-            var PW = $(".pw").val();
-            var RePW = $(".repw").val();
-            if(PW !== RePW)
-            {
-                alert("Passwords do not match");
-                $(".pw").val("");
-                $(".repw").val("");
-            }
-            else
-            {
-                var PWL = $(".pw").val().length;
-                // alert(PWL);
-                if(PWL < 8 || PWL > 16)
-                {
-                    alert("Password must be between 8 to 16 characters long");
+            else {
+                //get path and post it along with other form info and upload path to userProfile table
+                var PW = $(".pw").val();
+                var RePW = $(".repw").val();
+                if (PW !== RePW) {
+                    // alert("Passwords do not match");
+                    $('#error-statement').text("Passwords do not match");
                     $(".pw").val("");
                     $(".repw").val("");
                 }
-                else
-                {
-                    $("form").attr("method","POST");
-                    $("form").attr("action","/signup");
-                    $("form").submit();
+                else {
+                    var PWL = $(".pw").val().length;
+                    // alert(PWL);
+                    if (PWL < 8 || PWL > 16) {
+                        // alert("Password must be between 8 to 16 characters long");
+                        $('#error-statement').text("Password must be between 8 to 16 characters long");
+
+                        
+                        $(".pw").val("");
+                        $(".repw").val("");
+                    }
+                    else {
+                        $("form").attr("method", "POST");
+                        $("form").attr("action", "/signup");
+                        $("form").submit();
+                    }
+                    console.log(PWL);
                 }
-                console.log(PWL);
             }
-        }
-         
+
         });
 
 
-    $(".avatarSubmit").on("click",function(event){
-        event.preventDefault();
-        console.log($(this).context.attributes.src.nodeValue);
-        path = $(this).context.attributes.src.nodeValue;
-        //set a new src path for the card img so the img reflects what was picked
-        $(".card-img-top").attr("src",path);
-        $("#av").val(path);
-    })
+        $(".avatarSubmit").on("click", function (event) {
+            event.preventDefault();
+            console.log($(this).context.attributes.src.nodeValue);
+            path = $(this).context.attributes.src.nodeValue;
+            //set a new src path for the card img so the img reflects what was picked
+            $(".card-img-top").attr("src", path);
+            $("#av").val(path);
+        })
 
-    if($(".alert").length)
-    {
-        alert("Username is taken, pick another Username");
-    }
- 
+        if ($(".alert").length) {
+            alert("Username is taken, pick another Username");
+        }
+
     </script>
 
-   
+
 
 </body>
+
 </html>

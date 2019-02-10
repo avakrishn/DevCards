@@ -54,7 +54,13 @@ router.post('/', function(req, res){
   var firstName = req.body.first_name;
   var lastName = req.body.last_name;
   var email = req.body.email;
-  var avatarPath = req.body.profileAvatar;
+  
+  var avatarPath;
+  if(req.body.profileAvatar === ""){
+    avatarPath = "/assets/images/avatars/man.png";
+  }else{
+    avatarPath = req.body.profileAvatar;
+  }
   // console.log(username + " " + password + " " + firstName + " " + lastName + " " + email);
   console.log(avatarPath);
   //need to add restrictions on username (must be unique), email (must be unique), password (must be between 8 - 16 characters)
