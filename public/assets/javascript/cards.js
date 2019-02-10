@@ -163,6 +163,8 @@ $(window).ready(function(){
         deckName = 'Filtered My Cards Deck';
         filterDeckName(deckName);
         
+    }else if(hrefLocation == 'new_card'){
+        canSwitch = false;
     }
     // else if(window.location.href.indexOf('/flashcards/categories') > -1){
     // }
