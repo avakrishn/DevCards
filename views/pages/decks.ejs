@@ -42,13 +42,13 @@
 
         <div class="row">
 
-            
+
             <div class="col-md-4">
                 <div class="card text-center">
-                    <h3>Create a New Deck!</h3>
-                    <form method="POST" action="/decks/create">
-                        <input type="text" name="name" placeholder="Enter Name of Deck">
-                        <input class="check" type="submit" value="submit">
+                    <h3 class="deck-title pb-2" style="color:teal">Create a New Deck!</h3>
+                    <form method="POST" action="/decks/create" class="pb-4 mt-2">
+                        <input type="text" name="name" placeholder="Enter Name of Deck" class="mr-2">
+                        <input class="check btn btn-info" type="submit" value="Create">
                     </form>
                     <!-- <h3>View Your Deck Details</h3> -->
                     <!-- <div class="viewer">
@@ -63,19 +63,48 @@
                     <button class="hover" id="toggle">Help!!!</button> -->
                 </div>
             </div>
-            
-            <div class="col-md-6 cards">
-                    <div class="decks">
-                    </div>
-                    <div class="card">
-                        <h3>List of Decks</h3>
-                        <div class="deckHolder">
-                            <!-- this is where deck are placed -->
-                        </div>
+
+            <div class="col-md-7 cards">
+                <div class="decks">
+                </div>
+                <div class="card">
+                    <h3 class="deck-title pb-2" style="color:teal">List of Decks</h3>
+                    <div class="deckHolder pr-2">
+                        <!-- this is where deck are placed -->
                     </div>
                 </div>
+            </div>
         </div>
+        <!-- The Modal -->
+        <div class="modal" id="deleteDeckModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <h4>Are you sure you want to permanently delete this deck?</h4>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <form method="POST" id="deleteMyDeck">
+                            <input type="hidden" name="id" id="delete_deck_id">
+                            <button class="btn btn-danger">Delete Deck</button>
+                        </form>
+
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                    </div>
+
+                </div>
+            </div>
         </div>
+        <!-- </div> -->
     </main>
     <!-- <footer>
 <% include ../partials/footer %>
