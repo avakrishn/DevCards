@@ -48,7 +48,7 @@ router.get('/', function(req,res){
 
 //Returns deck details 
 router.get('/dash', function(req, res){
-    connection.query('SELECT * FROM decks WHERE users_id = ?;', [req.session.user_id], function (error, results, fields) {
+    connection.query('SELECT decks.id, decks.name, decks.users_id, decks.date, COUNT(deck_cards.cards_id) AS card_count FROM decks LEFT JOIN deck_cards ON decks.id = deck_cards.decks_id WHERE users_id = ? GROUP BY decks.id ORDER BY decks.date DESC;', [req.session.user_id], function (error, results, fields) {
     if (error) throw error;
     
     // req.session.decks = res.json(results); 
@@ -63,12 +63,18 @@ router.get('/viewer',function(req,res){
 
 //Creates a new deck 
 router.post('/create', function(req, res){
+    var deck_name = req.body.name;
+    deck_name = deck_name.trim();
+    if(deck_name !== ""){
+        connection.query('INSERT INTO decks (users_id, name) VALUES (?,?);', [req.session.user_id, req.body.name],function(error, results, fields){
+            if (error) throw error;
+    
+            res.redirect('/');
+        })
 
-    connection.query('INSERT INTO decks (users_id, name) VALUES (?,?);', [req.session.user_id, req.body.name],function(error, results, fields){
-        if (error) throw error;
+    }
 
-        res.redirect('/');
-    })
+    
 });
 
 var deckIden; 
@@ -77,15 +83,18 @@ router.get('/edit/:id', function(req,res){
     
     deckIden = req.params.id;
     console.log("database Connection");
-    connection.query('SELECT * FROM cards WHERE id IN (SELECT cards_id FROM deck_cards WHERE decks_id = ?)',[req.params.id], function(error, results, fields){
+    connection.query('SELECT DISTINCT cards.id, cards.front, decks.name FROM cards LEFT JOIN deck_cards ON deck_cards.cards_id = cards.id LEFT JOIN decks ON deck_cards.decks_id = decks.id WHERE decks_id = ?',[req.params.id], function(error, results, fields){
         
         //First for loop separates the array of objects and combines it into a long string
+    
         var front = '';
+        var deckName = "";
         // console.log('this is front' + JSON.stringify(results));
         if(results.length>0){
             for(var i =0; i<results.length;i++) {
                 front += results[i].id +'/'+  results[i].front+'<br>';
             }
+            deckName = results[0].name;
         }
         //splitID then splits the long string and puts it into an array
         console.log("FRONT: " + front);
@@ -112,7 +121,8 @@ router.get('/edit/:id', function(req,res){
         res.render('pages/edit_decks', {
             data: [req.session],
             random: iden,
-            phrase: phrase
+            phrase: phrase,
+            deckName: deckName
         });
     })  
 });
@@ -134,6 +144,16 @@ router.get('/delete/:id', function(req, res){
     function(err,results,fields){
         console.log('successfully deleted card ' + req.params.id);
         res.redirect('/decks/edit/'+ deckIden);
+    })
+});
+
+router.post('/deletedeck/:id', function(req,res){
+    connection.query('DELETE FROM deck_cards WHERE decks_id = ?;',[req.params.id],function(err,result,fields){
+        console.log('successfully deleted from deck_cards #' + req.params.id);
+        connection.query('DELETE FROM decks WHERE id = ?;',[req.params.id],function(err,result,fields){
+            console.log('successfully deleted deck #' + req.params.id);
+            res.redirect('/');
+        })
     })
 });
 
