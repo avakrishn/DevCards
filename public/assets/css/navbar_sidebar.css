@@ -42,18 +42,18 @@ body {
   text-decoration: none;
   font-size: 30px;
   color: white;
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  transition: all 0.8s;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
   top: 0px;
   right: 0px;
 }
 
 .sidebar, .sidebarFilter {
   position: fixed;
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  transition: all 0.8s;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
   top: 0;
   bottom: 0;
   right: -217px;
