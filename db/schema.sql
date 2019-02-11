@@ -23,6 +23,9 @@ CREATE TABLE users(
 CREATE TABLE userProfile(
 	id INT NOT NULL AUTO_INCREMENT,
 	users_id INT NOT NULL,
+	last_logged TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    biography TEXT,
+	avatarPath VARCHAR(255),
 	PRIMARY KEY (id),
 	FOREIGN KEY (users_id) REFERENCES users(id)
 );
@@ -77,4 +80,10 @@ CREATE TABLE comments(
 	PRIMARY KEY (id),
 	FOREIGN KEY (users_id) REFERENCES users(id),
 	FOREIGN KEY (cards_id) REFERENCES cards(id)
+);
+
+CREATE TABLE filterCategories(
+	users_id INT NOT NULL,
+    category VARCHAR (255) NOT NULL,
+	FOREIGN KEY (users_id) REFERENCES users(id)
 );
