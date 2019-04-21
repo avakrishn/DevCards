@@ -1,3 +1,7 @@
 node_modules
 .DS_Store
 .env
+.server-AK.js
+.layout_notes.md 
+.TODO_180831.md 
+./db/seed_LN.sql
