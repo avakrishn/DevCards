@@ -89,9 +89,15 @@
 
 - While studying you can easily add cards to one of your decks
 
+![Community Deck](https://raw.githubusercontent.com/avakrishn/Web-Dev-Cards/master/public/assets/images/readme/community-deck.png)
+
 - You can filter cards based on topic to study just specific topics from the community or my cards decks. 
 
-![Community Deck](https://raw.githubusercontent.com/avakrishn/Web-Dev-Cards/master/public/assets/images/readme/community-deck.png)
+![Filter Cards Front](https://raw.githubusercontent.com/avakrishn/Web-Dev-Cards/master/public/assets/images/readme/flashcard-front.png)
+
+- Use the unique and dynamic side navigation pull out tabs that are reminiscint of folders to see the Main Menu as well as the Filter By Topic feature.
+
+![Filter Cards Back](https://raw.githubusercontent.com/avakrishn/Web-Dev-Cards/master/public/assets/images/readme/flashcard-back.png)
 
 
 - You can Create New Cards to add to your decks and to the community deck.
@@ -99,7 +105,9 @@
 ![Create New Cards](https://raw.githubusercontent.com/avakrishn/Web-Dev-Cards/master/public/assets/images/readme/create-cards.png)
 
 
-## <a id="contributions"></a> Contributions By @avakrishn
+
+
+### <a id="contributions"></a> Contributions By @avakrishn
 
 - Designed and developed an interactive flashcard application and provided database DML, DDL, query support
 
