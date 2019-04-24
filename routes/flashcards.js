@@ -58,7 +58,6 @@ router.get('/my_cards', function(req,res){
 })
 
 router.put('/edit', function(req, res){
-    // console.log(req.body);
 
     if(req.body.front){
         connection.query('UPDATE cards SET front = ? WHERE id = ?', [req.body.front, req.body.id],function(error, results, fields){
@@ -67,8 +66,6 @@ router.put('/edit', function(req, res){
             res.json(results);
         });
 
-
-        //console.log(results);
 
     }else if(req.body.back){
         connection.query('UPDATE cards SET back = ? WHERE id = ?', [req.body.back, req.body.id],function(error, results, fields){
@@ -115,17 +112,13 @@ router.get('/new_card', function(req, res){
 })
 
 router.post('/create', function(req, res){
-    // console.log(req.body);
+
     if(req.session.user_id && req.body.category && req.body.front && req.body.back && req.body.difficulty){
         connection.query('INSERT INTO cards (creator_id, category, front, back, difficulty) VALUES (?,?, ?, ?, ?);', [req.session.user_id, req.body.category, req.body.front, req.body.back, req.body.difficulty],function(error, results, fields){
             if (error) throw error;
-            // console.log(results);
-            // console.log(results.insertId);
             if(req.body.deck_id){
                 connection.query('INSERT INTO deck_cards (decks_id, cards_id) VALUES (?, ?);', [req.body.deck_id, results.insertId],function(error, deckRes, fields){
                     if (error) throw error;
-                    // console.log(deckRes);
-                    
                 }) 
             } 
             res.redirect('/flashcards/new_card');     
@@ -174,7 +167,6 @@ router.get('/fill_user', function(req,res){
 router.get('/deck/:id', function(req,res){
     if(req.session.user_id){
         connection.query('SELECT * FROM decks WHERE id = ? AND users_id = ?;',[req.params.id, req.session.user_id], function (error, results, fields){
-            // console.log(results.length);
             if (error) throw error;
 
             else if(!results.length){
@@ -211,12 +203,11 @@ router.get('/deckName/:deckID', function(req, res){
 });
 
 router.post('/add_to_deck', function(req, res){
-    // console.log(req.body);
     connection.query('INSERT INTO deck_cards (decks_id, cards_id) VALUES (?, ?);', [req.body.deck_id, req.body.cards_id],function(error, deckRes, fields){
         if (error) throw error;
-        // console.log(deckRes);
+      
         res.redirect('/flashcards/deck/'+req.body.deck_id);
-        // res.sendStatus(200);
+       
     })       
    
 });
@@ -232,7 +223,6 @@ router.get('/categories/community_cards', function(req, res){
 });
 
 router.post('/categories/community_cards', function(req, res){
-    // console.log(req.body.category);
     var cat = req.body.category
     connection.query('DELETE FROM filterCategories WHERE users_id = ?',[req.session.user_id],function (error, results, fields) {
         if (error) throw error;
