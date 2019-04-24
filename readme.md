@@ -73,8 +73,56 @@
 
 - <a href="https://web-dev-cards.herokuapp.com/home" target="_blank">Access Web Dev Cards Here</a> 
 
-- Web Dev Cards Homepage
+- Web Dev Cards Landing Page
 
+![Landing Page](https://raw.githubusercontent.com/avakrishn/Web-Dev-Cards/master/public/assets/images/readme/landing-page.png)
+
+- From the Landing Page you have the option to Login or Register as a New User.
+
+![Register](https://raw.githubusercontent.com/avakrishn/Web-Dev-Cards/master/public/assets/images/readme/register.png)
+
+- Once logged in, your Homepage will contain all the decks you have created with their respective cards, which you can study or edit.
+
+![Homepage](https://raw.githubusercontent.com/avakrishn/Web-Dev-Cards/master/public/assets/images/readme/home-page.png)
+
+- You can study cards from the community deck or one of your created decks or my cards deck. 
+
+- While studying you can easily add cards to one of your decks
+
+- You can filter cards based on topic to study just specific topics from the community or my cards decks. 
+
+![Community Deck](https://raw.githubusercontent.com/avakrishn/Web-Dev-Cards/master/public/assets/images/readme/community-deck.png)
+
+
+- You can Create New Cards to add to your decks and to the community deck.
+
+![Create New Cards](https://raw.githubusercontent.com/avakrishn/Web-Dev-Cards/master/public/assets/images/readme/create-cards.png)
+
+
+## <a id="contributions"></a> Contributions By @avakrishn
+
+- Designed and developed an interactive flashcard application and provided database DML, DDL, query support
+
+- Enriched UI/UX  by creating dynamic and animated flashcards to allow for easy and repetitive studying
+
+- Created filter feature for users to quickly and effortlessly find the most relevant flashcards for their needs
+
+- Pages/Components/Routes:
+    - Landing Page
+    - Register Page
+    - Homepage
+    - Interactive Flashcards Pages 
+        - Community, My Cards, single deck, and filtered deck
+        - User can update and delete cards within the decks
+    - Folder-like Side Navigation Pullout Tabs (Menu and Filter)
+    - Filter Based on Topic Feature
+    - Create a New Flashcards page 
+
+
+
+- Other Contributors to Web Dev Cards:
+    - @lawrenceslng
+    - @tian3401
 
 
 ### **Future Code Development:**
