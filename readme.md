@@ -84,3 +84,4 @@
 * If you find an issue while using the app or have a request, <a href="https://github.com/lawrenceslng/Web-Dev-Cards/issues" target="_blank">log the issue or request here</a>. These issues will be addressed in a future code update.
 
 
+
